@@ -5,8 +5,8 @@
     {% if request.user.is_authenticated %}
     <h1>Welcome,&nbsp{{ request.user.first_name }}!</h1>
     <hr>
-    <a href="" class="button">New Meeting</a>
-    <a href="" class="button">Join Meeting</a>
+    <a href="{% url 'meeting' %}" class="button">New Meeting</a>
+    <a href="{% url 'join_room' %}" class="button">Join Meeting</a>
     <a href="{% url 'logout' %}" class="button">Logout</a>
     {% else %}
     <h1>Welcome to Video Conferencing App!</h1>

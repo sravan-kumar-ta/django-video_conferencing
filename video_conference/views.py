@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from video_conference.forms import RegisterForm
@@ -40,3 +41,16 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect("home")
+
+
+@login_required
+def video_call(request):
+    return render(request, 'video_call.html', {'name': request.user.first_name + " " + request.user.last_name})
+
+
+@login_required
+def join_room(request):
+    if request.method == 'POST':
+        roomID = request.POST['roomID']
+        return redirect("/meeting?roomID=" + roomID)
+    return render(request, 'join_room.html')
