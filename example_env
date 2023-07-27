@@ -1,0 +1,4 @@
+ZEGOCLOUD_ID = "Your ZEGOCLOUD App ID"
+SERVER_SECRET = "Your ZEGOCLOUD server secret"
+RECAPTCHA_PUBLIC_KEY = "Your Recaptcha public key"
+RECAPTCHA_PRIVATE_KEY = "Your Recaptcha private key"

@@ -1,3 +1,4 @@
+from captcha.fields import ReCaptchaField
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -38,3 +39,9 @@ class RegisterForm(UserCreationForm):
             user.save()
 
         return user
+
+
+class LoginForm(forms.Form):
+    email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={'placeholder': 'Enter your email'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Enter your password'}))
+    captcha = ReCaptchaField()

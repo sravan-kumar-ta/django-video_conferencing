@@ -112,6 +112,12 @@ body{
     color: #0fb800;
 }
 
+.g-recaptcha{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 /* Center the div with class name 'intro' and set the width to 100% */
 .intro {
     margin: auto;

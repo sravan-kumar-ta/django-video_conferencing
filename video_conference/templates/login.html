@@ -5,8 +5,9 @@
     <header>Login</header>
     <form action="{% url 'login' %}" method="POST" id="form">
         {% csrf_token %}
-        <input type="text" placeholder="Enter your email" name="email">
-        <input type="password" placeholder="Enter your password" name="password">
+        {% for field in form %}
+            {{ field }}
+        {% endfor %}
 
         {% if messages %}
         <ul class="messages">
